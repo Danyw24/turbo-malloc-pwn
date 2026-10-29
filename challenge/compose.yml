@@ -1,0 +1,13 @@
+services:
+  turbo-malloc:
+    build: .
+    restart: unless-stopped
+    ports:
+      - 1338:1338
+    configs:
+      - source: flag
+        target: /flag.txt
+
+configs:
+  flag:
+    content: "flag{*********************}\n"
